@@ -35,6 +35,7 @@ These tools yield groups of items from a source iterable.
 .. autofunction:: batched
 .. autofunction:: grouper
 .. autofunction:: partition
+.. autofunction:: transpose
 
 
 Lookahead and lookback
@@ -117,6 +118,7 @@ These tools combine multiple iterables.
 .. autofunction:: interleave
 .. autofunction:: interleave_longest
 .. autofunction:: interleave_evenly
+.. autofunction:: partial_product
 .. autofunction:: sort_together
 .. autofunction:: value_chain
 .. autofunction:: zip_offset(*iterables, offsets, longest=False, fillvalue=None)
@@ -293,3 +295,5 @@ Others
 .. autofunction:: repeatfunc
 .. autofunction:: polynomial_from_roots
 .. autofunction:: sieve
+.. autofunction:: factor
+.. autofunction:: matmul
