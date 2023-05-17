@@ -311,9 +311,11 @@ except ImportError:
     pairwise = _pairwise
 else:
 
-    def pairwise(iterable):
-        return itertools_pairwise(iterable)
+   # def pairwise(iterable):
+   #     return itertools_pairwise(iterable)
+    from functools import partial
 
+    pairwise = partial(itertools_pairwise)
     pairwise.__doc__ = _pairwise.__doc__
 
 
