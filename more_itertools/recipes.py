@@ -302,7 +302,7 @@ def _pairwise(iterable):
     """
     a, b = tee(iterable)
     next(b, None)
-    yield from zip(a, b)
+    return zip(a, b)
 
 
 try:
