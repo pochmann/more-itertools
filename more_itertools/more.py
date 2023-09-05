@@ -25,6 +25,7 @@ from random import random, randrange, uniform
 from operator import itemgetter, mul, sub, gt, lt, ge, le
 from sys import hexversion, maxsize
 from time import monotonic
+from contextlib import suppress
 
 from .recipes import (
     _marker,
@@ -4587,7 +4588,5 @@ def iter_suppress(iterable, *exceptions):
     >>> list(chain(it_1, it_2))
     [1, 2, 3, 4, 2, 3, 4]
     """
-    try:
+    with suppress(*exceptions):
         yield from iterable
-    except exceptions:
-        pass
