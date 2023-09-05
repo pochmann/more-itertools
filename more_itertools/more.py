@@ -4588,6 +4588,6 @@ def iter_suppress(iterable, *exceptions):
     [1, 2, 3, 4, 2, 3, 4]
     """
     try:
-        it = iter(iterable)
+        yield from iterable
     except exceptions:
         pass
