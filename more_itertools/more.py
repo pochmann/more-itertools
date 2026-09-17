@@ -1211,11 +1211,7 @@ class bucket:
             # Otherwise we need to advance the parent iterator to search for
             # a matching item, caching the rest.
             else:
-                while True:
-                    try:
-                        item = next(self._it)
-                    except StopIteration:
-                        return
+                for item in self._it:
                     item_value = self._key(item)
                     if item_value == value:
                         if value not in self._cache:
@@ -1224,6 +1220,8 @@ class bucket:
                         break
                     elif self._validator(item_value):
                         self._cache[item_value].append(item)
+                else:
+                    return
 
     def __iter__(self):
         for item in self._it:
