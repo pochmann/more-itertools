@@ -439,14 +439,12 @@ def partition(pred, iterable):
     def gen(queue):
         append_false = false_queue.append
         append_true = true_queue.append
-        while True:
+        while queue:
+            yield queue.popleft()
+        for value in iterator:
+            (append_true if pred(value) else append_false)(value)
             while queue:
                 yield queue.popleft()
-            for value in iterator:
-                (append_true if pred(value) else append_false)(value)
-                break
-            else:
-                return
 
     return gen(false_queue), gen(true_queue)
 
