@@ -3580,8 +3580,10 @@ def set_partitions(iterable, k=None, min_size=None, max_size=None):
         elif k > n:
             return
 
-    min_size = min_size if min_size is not None else 0
-    max_size = max_size if max_size is not None else n
+    if min_size is None or min_size < 1:
+        min_size = 1
+    if max_size is None or max_size > n:
+        max_size = n
     if min_size > max_size:
         return
 
