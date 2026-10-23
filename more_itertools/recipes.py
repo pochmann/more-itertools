@@ -1,7 +1,7 @@
 """Imported from the recipes section of the itertools documentation.
 
 All functions taken from the recipes section of the itertools library docs
-[1]_.
+[1]_. Testing...
 Some backward-compatible usability improvements have been made.
 
 .. [1] http://docs.python.org/library/itertools.html#recipes
